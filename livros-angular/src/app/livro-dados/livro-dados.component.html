@@ -1,0 +1,88 @@
+<h1>Novo Livro</h1>
+
+<p>
+
+  <label>
+    Título
+  </label>
+
+  <br>
+
+  <input
+    [(ngModel)]="titulo"
+  >
+
+</p>
+
+<p>
+
+  <label>
+    Resumo
+  </label>
+
+  <br>
+
+  <textarea
+    [(ngModel)]="resumo"
+  >
+  </textarea>
+
+</p>
+
+<p>
+
+  <label>
+    Autores
+  </label>
+
+  <br>
+
+  <input
+    [(ngModel)]="autores"
+  >
+
+</p>
+
+<p>
+
+  <label>
+    Editora
+  </label>
+
+  <br>
+
+  <select
+    [(ngModel)]="codEditora"
+  >
+
+    <option
+      *ngFor="
+      let editora
+      of editoras
+      "
+      [value]="
+      editora.codEditora
+      "
+    >
+
+      {{
+      editora.nome
+      }}
+
+    </option>
+
+  </select>
+
+</p>
+
+<button
+  (click)="incluir()"
+>
+  Salvar
+</button>
+
+<br><br>
+
+<a routerLink="/lista">
+  Voltar
+</a>

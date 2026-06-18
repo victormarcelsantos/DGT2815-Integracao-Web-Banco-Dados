@@ -1,0 +1,64 @@
+<h1>Catálogo de Livros</h1>
+
+<p>
+  <a routerLink="/dados">
+    Novo Livro
+  </a>
+</p>
+
+<table border="1">
+
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Editora</th>
+      <th>Autores</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr
+      *ngFor="
+      let livro of livros;
+      let i = index
+      "
+    >
+
+      <td>
+        {{ livro.titulo }}
+      </td>
+
+      <td>
+        {{
+          obterNomeEditora(
+            livro.codEditora
+          )
+        }}
+      </td>
+
+      <td>
+        {{
+          livro.autores.join(', ')
+        }}
+      </td>
+
+      <td>
+
+        <button
+          (click)="
+          excluir(
+            livro.codigo
+          )"
+        >
+          Excluir
+        </button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
